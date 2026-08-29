@@ -1,0 +1,164 @@
+.footer {
+  width: 100%;
+  background-color: #141414;
+  color: #737373;
+  padding: 60px 0 30px;
+}
+
+.container {
+  width: 70%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 22px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  font-size: 20px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.socialLink:hover {
+  color: #b3b3b3;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   FOOTER LINKS
+========================= */
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 50px;
+  row-gap: 20px;
+}
+
+.linkColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.linkColumn a {
+  color: #737373;
+  font-size: 13px;
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.linkColumn a:hover {
+  text-decoration: underline;
+  color: #b3b3b3;
+}
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.copyright {
+  margin-top: 45px;
+  margin-bottom: 0;
+
+  color: #737373;
+  font-size: 13px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .container {
+    width: 80%;
+  }
+
+  .footerLinks {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 45px 0 25px;
+  }
+
+  .container {
+    width: 85%;
+  }
+
+  .socialIcons {
+    gap: 22px;
+    margin-bottom: 30px;
+  }
+
+  .socialLink {
+    font-size: 18px;
+  }
+
+  .footerLinks {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 25px;
+    row-gap: 28px;
+  }
+
+  .linkColumn {
+    gap: 15px;
+  }
+
+  .linkColumn a {
+    font-size: 12px;
+  }
+
+  .copyright {
+    margin-top: 35px;
+    font-size: 11px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+  .container {
+    width: 88%;
+  }
+
+  .footerLinks {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .linkColumn {
+    gap: 12px;
+  }
+}
