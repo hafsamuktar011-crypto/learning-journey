@@ -1,6 +1,6 @@
 import React,{useEffect, useState}from "react";
 import styles from "./Header.module.css";
-import logo from "../../assets/images/marshals (3).webp";
+import logo from "../../assets/images/marshals-3.webp";
 import {Link} from "react-router-dom"
 import {Search,Bell,User,ChevronDown, Code} from 'lucide-react'
 

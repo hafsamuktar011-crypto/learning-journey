@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import NetflexBannerLogo from '../../assets/images/marshals (3).webp'
+import NetflexBannerLogo from '../../assets/images/marshals-3.webp'
 import {Play,Info} from "lucide-react"
 import styles from './Banner.module.css'
 import { movieInstance } from '../../utility/MoviesInstance';
