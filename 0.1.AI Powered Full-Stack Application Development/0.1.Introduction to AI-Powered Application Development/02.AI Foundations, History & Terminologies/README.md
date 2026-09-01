@@ -57,6 +57,7 @@ AI concepts work like Russian nesting dolls—each inner layer is a specialized 
 
 ### 🧠 **Intelligence Levels**
 
+
 * 🎯 **ANI (Artificial Narrow Intelligence):** Specialists at ONE task (e.g., AlphaGo, Siri, LLMs). *All modern AI is ANI.*
 * 👤 **AGI (Artificial General Intelligence):** Theoretical AI matching human reasoning, common sense, and multi-task learning.
 * 🚀 **ASI (Artificial Superintelligence):** Theoretical AI far surpassing human intellect in every domain.
