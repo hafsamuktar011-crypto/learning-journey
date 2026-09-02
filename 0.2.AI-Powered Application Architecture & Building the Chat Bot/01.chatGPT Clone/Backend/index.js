@@ -6,7 +6,10 @@ const app = express();
 
 async function startServer(){
     try{
-  app.listen(8000,()=>{
+  app.listen(8000,(err)=>{
+    if(err){
+      throw err
+    }
     console.log('server is runninng on port http;//lovalhost:8000');
     
   })
@@ -14,8 +17,8 @@ async function startServer(){
       console.log('enter starting server:',err);
       
     }
-  
 }
+    startServer()
 
 
 
