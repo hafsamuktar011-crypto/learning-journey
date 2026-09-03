@@ -1,3 +1,4 @@
+import 'dotenv/config'
 
 import express from "express";
 import db from './db/db.config.js'
