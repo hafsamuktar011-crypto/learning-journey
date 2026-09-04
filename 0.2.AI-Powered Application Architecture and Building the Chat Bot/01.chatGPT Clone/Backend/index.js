@@ -4,8 +4,8 @@ import express from "express";
 import db from './db/db.config.js'
 
 
-app.post("api/chat/conversation",(req,res)+>{
-  
+app.post("api/chat/conversation",(req,res)=>{
+  res.send('post method')
 })
 const app = express();
 
