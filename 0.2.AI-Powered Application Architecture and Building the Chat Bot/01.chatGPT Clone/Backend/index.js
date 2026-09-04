@@ -8,6 +8,7 @@ const app = express();
 async function startServer(){
     try{
  const connection=await db.getConnection()
+ connection.release()
 
   app.listen(8000,(err)=>{
     if(err){
