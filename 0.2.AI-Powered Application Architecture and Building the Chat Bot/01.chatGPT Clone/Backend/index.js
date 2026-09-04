@@ -3,11 +3,11 @@ import 'dotenv/config'
 import express from "express";
 import db from './db/db.config.js'
 
+const app = express();
 
 app.post("api/chat/conversation",(req,res)=>{
   res.send('post method')
 })
-const app = express();
 
 async function startServer(){
     try{
