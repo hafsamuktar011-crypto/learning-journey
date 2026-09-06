@@ -9,3 +9,5 @@ app.post('chat',(req,res)=>{
 app.get('chat',(req,res)=>{
     
 })
+
+export default chatRouter

@@ -1,6 +1,6 @@
 import express from 'express'
+import chatRouter from './api/Chat/chat.route.js'
 
-import chatRoute from './api/Chat/chat.route.js'
 const mainRouter=express.Router()
 
 mainRouter.use('/chat',)
