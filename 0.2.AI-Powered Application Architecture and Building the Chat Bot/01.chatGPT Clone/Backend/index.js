@@ -5,13 +5,15 @@ import db from './db/db.config.js'
 
 const app = express();
 
-app.post("api/chat/conversation",(req,res)=>{
-  res.send('post method')
-})
+app.use=express.json
 
-app.get("api/chat/conversation",(req,res)=>{
-  res.send('get method')
-})
+// app.post("api/chat/conversation",(req,res)=>{
+//   res.send('post method')
+// })
+
+// app.get("api/chat/conversation",(req,res)=>{
+//   res.send('get method')
+// })
 
 async function startServer(){
     try{
