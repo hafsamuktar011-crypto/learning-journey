@@ -5,7 +5,7 @@ import db from './db/db.config.js'
 
 const app = express();
 
-app.use=express.json
+app.use=express.json()
 
 // app.post("api/chat/conversation",(req,res)=>{
 //   res.send('post method')
