@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './SlideShow.module.css'
 import MovieCard from '../MovieCard/MovieCard'
-import { movies } from './../../Data/Data';
+import { movies } from '../../Data/Data';
 
 import {Swiper,SwiperSlide} from 'swiper/react'
 import "swiper/css"
