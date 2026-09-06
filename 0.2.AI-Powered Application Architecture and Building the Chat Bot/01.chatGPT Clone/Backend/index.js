@@ -2,18 +2,14 @@ import 'dotenv/config'
 
 import express from "express";
 import db from './db/db.config.js'
+import mainRoute from './src/main.route.js';
 
 const app = express();
 
-app.use=express.json()
+app.use(express.json())
+app.use('api',mainRoute)
 
-// app.post("api/chat/conversation",(req,res)=>{
-//   res.send('post method')
-// })
 
-// app.get("api/chat/conversation",(req,res)=>{
-//   res.send('get method')
-// })
 
 async function startServer(){
     try{
