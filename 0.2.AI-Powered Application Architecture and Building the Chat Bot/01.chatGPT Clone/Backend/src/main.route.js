@@ -3,6 +3,6 @@ import chatRouter from './api/Chat/chat.route.js'
 
 const mainRouter=express.Router()
 
-mainRouter.use('/chat',)
+mainRouter.use('/chat',chatRouter)
 
 export default mainRouter()
