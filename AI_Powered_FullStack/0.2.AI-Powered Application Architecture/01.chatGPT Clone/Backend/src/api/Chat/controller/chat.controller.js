@@ -2,8 +2,8 @@
 
 export function createConversation(req,res,next){
   try{
-  throw new Error('create conversation api error')
-   res.status(200).send('created convo')
+  const result= await createConversation()
+   res.status(200).send(`$(result)` +'created convo')
   }
   catch(error){
 throw error
