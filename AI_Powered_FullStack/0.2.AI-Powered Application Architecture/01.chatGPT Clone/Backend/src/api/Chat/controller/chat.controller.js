@@ -12,5 +12,9 @@ throw error
 }
 
 export function getConversation(req,res){
-    res.status(200).send('get convo')
+  try{
+       res.status(200).send('get convo')
+  }catch(err){
+  throw(err)
+  }
 }
