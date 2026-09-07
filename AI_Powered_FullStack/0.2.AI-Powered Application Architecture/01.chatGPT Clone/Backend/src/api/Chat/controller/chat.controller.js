@@ -1,4 +1,10 @@
-export function createConversation(req,res){
+export function createConversation(req,res,next){
+  try{
+
+  }
+  catch(error){
+throw error
+  }
   res.status(200).send('created convo')
 }
 
