@@ -1,9 +1,9 @@
 
 
-export function createConversation(req,res,next){
+export async function createConversation(req,res,next){
   try{
   const result= await createConversation()
-   res.status(200).send(`$(result)` +'created convo')
+   res.status(200).send(`${result}` +'created convo')
   }
   catch(error){
 throw error
