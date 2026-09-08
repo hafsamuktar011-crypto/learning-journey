@@ -1,3 +1,5 @@
+import { getRecentConversationRows } from "../service/chat.service";
+
 export async function createConversation(req, res, next) {
     try {
 
@@ -12,13 +14,15 @@ export async function createConversation(req, res, next) {
     }
 }
 
-export async function getRecentConversationRows(req,res,next) {
-  try{
-   const result=await getConversationService(5)
-   res.status(200).send({
-
-   })
-  }catch(error){
-    next(error)
-  }
+export async function getConversationController(req, res) {
+    try {
+        const result = await getRecentConversationRows(100);
+        res.status(200).json({
+            success: true,
+            message: 'conversations fetched successfully',
+            data: result,
+        })
+    } catch (error) {
+        throw error
+    }
 }
