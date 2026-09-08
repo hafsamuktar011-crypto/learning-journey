@@ -1,6 +1,8 @@
 import express from 'express'
-import { createConversation } from './controller/chatcontroller'
-import { getConversation } from './controller/chatcontroller'
+
+
+import { createConversation } from '../controller/chat.controller.js';
+import { getConversation } from '../controller/chat.controller.js';
 
 const chatRouter=express.Router()
 

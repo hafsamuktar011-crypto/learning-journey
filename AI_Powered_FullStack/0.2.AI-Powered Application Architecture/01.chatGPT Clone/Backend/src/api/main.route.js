@@ -1,8 +1,8 @@
 import express from 'express'
-import chatRouter from './api/Chat/chat.route.js'
+import chatRouter from "./Chat/Router/chat.route.js";
 
-const mainRouter=express.Router()
+const mainRoute=express.Router()
 
-mainRouter.use('/chat',chatRouter)
+mainRoute.use('/chat',chatRouter)
 
-export default mainRouter()
+export default mainRoute

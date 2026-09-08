@@ -11,3 +11,13 @@ export async function createConversation(req, res, next) {
         next(error);
     }
 }
+
+export async function getConversation(req,res,next) {
+  try{
+   const {question}=req.body
+   const result=await createConversationService(question)
+   res.status(200).send('get what i need')
+  }catch(error){
+    next(error)
+  }
+}
