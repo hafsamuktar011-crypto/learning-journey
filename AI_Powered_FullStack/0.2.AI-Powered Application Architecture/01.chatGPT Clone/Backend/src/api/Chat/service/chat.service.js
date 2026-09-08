@@ -1,4 +1,15 @@
-import db from '../../../../db/db.config.js';
+import db from '../../../../db/db.config.js'; 
+
+import { GoogleGenAI } from "@google/genai";
+
+const GEMINI_MODEL=process.env.GEMINI_MODEL || 'gemini-2.0-flash-lite'
+
+const createGeminiClient=()=>{
+  if(!process.env.GEMINI_MODEL){
+    throw new Error({apiKey:process.env.GEMINI_API_KEY})
+  }
+  const geminiClient =new GoogleGenAI({apiKey:process.env.GEMINI_API_KEY})
+}
 
 export async function createConversation(question) {
 
@@ -40,11 +51,22 @@ export const getRecentConversationRows = async (limit = 5) => {
     return rows.reverse();
 }
 
+//
 export const generateAssistantAnswer = async ({ historyRows, question}) => {
+     //format history for gemini statchat
     const formattedHistory = historyRows.map(row => ({
         role: row.role === 'assistant' ? 'model' : 'user',
         parts: [{ text: row.content}],
     }))
+
+    //sample history format
+    //[
+    //{role:'user',
+    //parts:[{text:'hello, i'm a user'}]
+    //},
+    //{role:'model',
+    //parts:[{text:'hello,i'm a model'}]}
+    //]
 
     const chat = geminiClient.chats.create({
         model: GEMINI_MODEL,
