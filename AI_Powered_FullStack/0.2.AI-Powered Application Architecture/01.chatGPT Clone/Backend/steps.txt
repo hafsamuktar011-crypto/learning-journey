@@ -1,0 +1,5 @@
+select history 100/50
+save new question
+
+combine them and to build prompt +context
+send request to gemini (model)
