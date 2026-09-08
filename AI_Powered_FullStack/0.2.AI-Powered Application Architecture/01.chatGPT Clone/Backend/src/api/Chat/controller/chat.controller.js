@@ -1,21 +1,13 @@
+export async function createConversation(req, res, next) {
+    try {
 
+        const { question } = req.body;
 
-export async function createConversation(req,res,next){
-  try{
-    const {question}=req.body
-  const result= await createConversation()
-   res.status(200).send(`${result}` +'created convo')
-  }
-  catch(error){
-throw error
-  }
- 
-}
+        const result = await createConversationService(question);
 
-export function getConversation(req,res){
-  try{
-       res.status(200).send('get convo')
-  }catch(err){
-  throw(err)
-  }
+        res.status(200).send(`${result} created convo`);
+
+    } catch (error) {
+        next(error);
+    }
 }
