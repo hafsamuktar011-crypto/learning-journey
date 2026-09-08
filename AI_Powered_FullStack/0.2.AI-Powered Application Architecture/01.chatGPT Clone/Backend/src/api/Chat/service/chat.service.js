@@ -3,7 +3,7 @@ import db from '../../../../db/db.config.js';
 export async function createConversation(question) {
 
     try {
-
+           //validate
         if (!question.trim()) {
             const error = new Error("question is required");
             error.status = 400;
@@ -40,7 +40,7 @@ export const getRecentConversationRows = async (limit = 5) => {
     return rows.reverse();
 }
 
-const generateAssistantAnswer = async ({ historyRows, question}) => {
+export const generateAssistantAnswer = async ({ historyRows, question}) => {
     const formattedHistory = historyRows.map(row => ({
         role: row.role === 'assistant' ? 'model' : 'user',
         parts: [{ text: row.content}],
@@ -58,7 +58,7 @@ const generateAssistantAnswer = async ({ historyRows, question}) => {
     return {text: result.text, totalTokens: result.usageMetadata.totalTokenCount}
 }
 
-const getMessageById =async messageId => {
+export const getMessageById =async messageId => {
     const [rows] = await db.execute(
         'SELECT id, role, content, token_count, created_at FROM conversations WHERE id = ? LIMIT 1',
         [messageId],
