@@ -12,7 +12,7 @@ export async function createConversation(question) {
                //save to db
                
         await connection.query(
-            "INSERT INTO conversations (question) VALUES (?)",
+            "INSERT INTO conversations (content) VALUES (?)",
             [question]
         );
 
@@ -21,4 +21,21 @@ export async function createConversation(question) {
     } catch (error) {
         throw error;
     }
+}
+
+// get recent conversation row from db
+export const getRecentConversationRows = async (limit = 5) => {
+    const normalizedLimit = Number.parseInt(limit, 10);
+    const safeLimit = 
+    Number.isNaN(normalizedLimit) || normalizedLimit <= 0
+    ? 20
+    : normalizedLimit;
+
+    const [rows] = await db.execute(
+        `SELECT id, role, content, created_at
+        FROM conversations
+        ORDER BY id DESC
+        LIMIT ${safeLimit}`
+    );
+    return rows.reverse();
 }
