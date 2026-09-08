@@ -1,4 +1,4 @@
-import db from "../config/db.js";
+import db from '../../../../db/db.config.js';
 
 export async function createConversation(question) {
 

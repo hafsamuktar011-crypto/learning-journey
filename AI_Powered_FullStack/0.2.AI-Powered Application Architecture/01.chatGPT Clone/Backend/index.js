@@ -2,7 +2,7 @@ import 'dotenv/config'
 
 import express from "express";
 import db from './db/db.config.js'
-import mainRoute from './src/main.route.js';
+import mainRoute from './src/api/main.route.js';
 
 const app = express();
 
