@@ -1,3 +1,4 @@
+import { text } from 'express';
 import db from '../../../../db/db.config.js'; 
 
 import { GoogleGenAI } from "@google/genai";
@@ -11,7 +12,7 @@ const createGeminiClient=()=>{
   const geminiClient =new GoogleGenAI({apiKey:process.env.GEMINI_API_KEY})
 }
 
-export async function createConversation(question) {
+export async function createConversationService(question) {
 
     try {
            //validate
@@ -20,14 +21,35 @@ export async function createConversation(question) {
             error.status = 400;
             throw error;
         }
-               //save to db
+        //get recent convo
+        const historyRows=await getRecentConversationRows(5)
+
+               //insert new convo
                
-        await connection.query(
-            "INSERT INTO conversations (content) VALUES (?)",
+        const [result]=await connection.query(
+            'INSERT INTO conversations (content) VALUES (?,"user")',
             [question]
         );
 
-        return `chat saved to db with question:${question}`
+        const{text,totalTokens}=await generateAssistantAnswer({
+            historyRows,
+            question
+        })
+
+        const [createAssistanceMessageResult]=await db.execute(
+            'INSERT INTO conversation (role,content,toke_count)VALUES(?,?,?',
+            ['assistant',text,totalTokens],
+        )
+        //again fetch user and assistant history to make suitable for frontend
+        
+        const userConversation=await getMessageById(result.insertId)
+        const assistantConversation=await getMessageById(createAssistanceMessageResult,insertId)
+
+
+        return {
+            userConversation,
+            assistantConversation,
+        }
 
     } catch (error) {
         throw error;
@@ -72,12 +94,15 @@ export const generateAssistantAnswer = async ({ historyRows, question}) => {
         model: GEMINI_MODEL,
         config: {
             maxOutputTokens: 1024,
+            temprature:0.5,
         },
         history: formattedHistory,
     })
-
+  
     const result = await chat.sendMessage({ message: question})
-    return {text: result.text, totalTokens: result.usageMetadata.totalTokenCount}
+    console.log(result.text)
+    return {text: result.text, 
+            totalTokens: result.usageMetadata.totalTokenCount}
 }
 
 export const getMessageById =async messageId => {
@@ -92,5 +117,36 @@ export const getMessageById =async messageId => {
         content: rows[0].content,
         tokenCount: Number(rows[0].token_count || 0),
         createdAt: rows[0].created_at,
+    }
+}
+
+export async function createConversationService(question){
+    try{
+  //validate
+  if(!question.trim()){
+    const error=new Error('question is required')
+    error.status=400
+    throw error
+  } 
+  //insert new conversation 
+  const[result]=await db.execute(
+    'INSERT INTO conversation (content,role) VALUES(? ,"user")',
+    [question]
+  );
+
+
+  const [createAssistantMessageResult]=await db.execute(
+    'INSERT INTO conversation (role,content,token_conunt)VALUES (?,?,?'
+  )
+
+  const userConversation=await getMessageById(result.insertId)
+  const assistantConversation=await getMessageById(createAssistantMessageResult.insertId)
+  
+  return {
+    //historyRow
+    assistanceAnswer:text,
+  }
+    }catch(err){
+
     }
 }

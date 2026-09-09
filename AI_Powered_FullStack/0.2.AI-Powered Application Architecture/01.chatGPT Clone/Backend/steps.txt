@@ -3,3 +3,5 @@ save new question
 
 combine them and to build prompt +context
 send request to gemini (model)
+save AI response in db
+response for the req
