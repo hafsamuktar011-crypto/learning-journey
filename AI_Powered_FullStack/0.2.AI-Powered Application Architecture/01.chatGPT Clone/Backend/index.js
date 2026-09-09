@@ -17,6 +17,7 @@ app.use(errorHander);
 
 async function startServer() {
   try {
+    //create connection
     const connection = await db.getConnection();
 
     connection.release();

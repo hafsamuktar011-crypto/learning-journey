@@ -150,3 +150,15 @@ export async function createConversationService(question){
 
     }
 }
+
+/** create a new convo row
+ * @param {object}var bodyParser = require('body-parser');
+ app.use(bodyParser.json());
+ 
+ app.put('/products', function(req, res) {
+   const { id, name, description } = req.body;
+   res.send(`Name ${id} ${name}, desc ${description}`);
+ });
+ @param{string}params.question
+ @returns{promise<{userConversation:object,assistantConversation:object}}
+ */
