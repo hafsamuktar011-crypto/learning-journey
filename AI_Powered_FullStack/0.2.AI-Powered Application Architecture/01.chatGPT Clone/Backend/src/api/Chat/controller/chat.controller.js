@@ -1,5 +1,5 @@
 import { getRecentConversationRows } from "../service/chat.service";
-
+import { createConversationService } from "../service/chat.service";
 
 
 export async function createConversationController(req, res, next) {
