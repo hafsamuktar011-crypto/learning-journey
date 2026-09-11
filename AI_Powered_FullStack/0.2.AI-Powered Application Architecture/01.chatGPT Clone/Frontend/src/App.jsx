@@ -2,6 +2,7 @@ import React from 'react'
 
 import Sidebar from './Components/Sidebar/Sidebar'
 import ChatHeader from './components/ChatHeader/ChatHeader'
+import ChatMessage from './components/ChatMessage/ChatMessage';
 
 function App() {
   return (
