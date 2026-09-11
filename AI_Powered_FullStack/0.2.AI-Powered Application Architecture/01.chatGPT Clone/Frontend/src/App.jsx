@@ -10,11 +10,11 @@ function App() {
 
       {/* side bar */}
       <Sidebar/>
-      <main>
+      <main className='main'>
         {/* chatHeader */}
 <ChatHeader/>
         {/* messageList */}
-
+    <ChatMessage/>
         {/* chatInput */}
       </main>
     </div>
