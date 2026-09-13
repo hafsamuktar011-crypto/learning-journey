@@ -2,7 +2,9 @@ import React from 'react'
 
 import Sidebar from './Components/Sidebar/Sidebar'
 import ChatHeader from './components/ChatHeader/ChatHeader'
-import ChatMessage from './components/ChatMessage/ChatMessage';
+import ChatMessage from './components/ChatMessage/ChatMessage'
+import MessageList from './components/MessageList/MessageList'
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         {/* messageList */}
     <ChatMessage/>
         {/* chatInput */}
+
       </main>
     </div>
   )
