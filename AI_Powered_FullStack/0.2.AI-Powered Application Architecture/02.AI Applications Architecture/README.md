@@ -1,4 +1,4 @@
-# 🏗️ AI Applications Architecture
+
 # 🏗️ 02. AI Applications Architecture
 
 Welcome to the **AI Applications Architecture** reference guide! This folder houses core concepts, design patterns, and engineering strategies for building production-grade Large Language Model (LLM) applications.
