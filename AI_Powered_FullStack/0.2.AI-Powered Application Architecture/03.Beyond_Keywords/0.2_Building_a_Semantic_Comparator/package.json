@@ -1,0 +1,14 @@
+{
+  "name": "0.2_building_a_semantic_comparator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01_Generate_Embeddings.js",
+  "scripts": {
+    "dev":"01_Generate_Embeddings.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
