@@ -4,11 +4,14 @@
   "description": "",
   "main": "01_Generate_Embeddings.js",
   "scripts": {
-    "dev":"01_Generate_Embeddings.js",
+    "dev": "01_Generate_Embeddings.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^2.23.0"
+  }
 }
