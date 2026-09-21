@@ -17,9 +17,12 @@ async function generateEmbedding() {
         //generate the embedding
         const result=await ai.models.embedContent({
             model:GEMINI_EMBEDDING_MODEL,
-            contents:text
+            contents:text,
+            config:{
+             outputDimensionality:500
+            }
         })
-        console.log(result)
+        console.log(result.embeddings)
     }catch(error){
         console.log('error generating embedding',error)
     }
