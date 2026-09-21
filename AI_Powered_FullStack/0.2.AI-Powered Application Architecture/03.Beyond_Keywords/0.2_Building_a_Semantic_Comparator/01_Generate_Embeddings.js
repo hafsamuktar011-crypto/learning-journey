@@ -11,7 +11,7 @@ if(!GEMINI_API_KEY){
 //1.initialize the SDK
 const ai=new GoogleGenAI({apiKey:GEMINI_API_KEY})
 
-async function generateEmbedding(params) {
+async function generateEmbedding() {
     const text="hello"
     try{
         //generate the embedding
@@ -19,5 +19,9 @@ async function generateEmbedding(params) {
             model:GEMINI_EMBEDDING_MODEL,
             contents:text
         })
+        console.log(result)
+    }catch(error){
+        console.log('error generating embedding',error)
     }
 }
+generateEmbedding()
