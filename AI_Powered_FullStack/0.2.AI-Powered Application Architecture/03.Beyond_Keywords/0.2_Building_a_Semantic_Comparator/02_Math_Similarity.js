@@ -19,3 +19,8 @@ function cosineSimilarity(vecA,vecB){
         dotproduct +=vecA(i)*vecB
     }
 }
+
+
+//identical direction(scale up)
+const vectr1=[1,2]
+const vectr2=[2,3]
