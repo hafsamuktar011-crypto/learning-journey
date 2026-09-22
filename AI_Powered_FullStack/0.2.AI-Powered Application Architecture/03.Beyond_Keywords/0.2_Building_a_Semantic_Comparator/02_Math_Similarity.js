@@ -9,3 +9,9 @@ if (!GEMINI_API_KEY) {
 
 //initiaze the sdk
 const ai=new GoogleGenAI({apiKey:GEMINI_API_KEY})
+
+//(A+B)/(||A||*||B||)
+
+function cosineSimilarity(vecA,vecB){
+    
+}
