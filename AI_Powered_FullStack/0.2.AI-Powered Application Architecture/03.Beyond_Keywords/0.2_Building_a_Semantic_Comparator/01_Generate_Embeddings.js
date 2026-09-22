@@ -22,7 +22,7 @@ async function generateEmbedding() {
              outputDimensionality:500
             }
         })
-        console.log(result.embeddings)
+        console.log(result.embeddings[0].values.slice(0.10))
     }catch(error){
         console.log('error generating embedding',error)
     }
