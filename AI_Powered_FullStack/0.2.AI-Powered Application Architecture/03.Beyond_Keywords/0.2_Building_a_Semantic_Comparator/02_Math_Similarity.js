@@ -15,4 +15,7 @@ const ai=new GoogleGenAI({apiKey:GEMINI_API_KEY})
 function cosineSimilarity(vecA,vecB){
     //1.dot product(multpy matching component and sum)
     let dotproduct=0
+    for(let i=0;i<vecA.length;i++){
+        dotproduct +=vecA(i)*vecB
+    }
 }
