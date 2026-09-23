@@ -39,6 +39,7 @@ for(let i=0;i<vecB.length;i++){
 }
 magnitudeB=Math.sqrt(magnitudeB)
 
+return dotProduct / (magnitudeA * magnitudeB);
 
 //identical direction(scale up)
 const vectr1=[1,2]
