@@ -30,17 +30,28 @@ if(vecA.length === vecB.length){
 let magnitudeA=0
 let magnitudeB=0
 for(let i=0;i<vecA.length;i++){
-    magnitudeA+=vecA(i)*vecB(i)
+    magnitudeA+=vecA[i]*vecB[i]
 }
 magnitudeA=Math.sqrt(magnitudeA)
 
 for(let i=0;i<vecB.length;i++){
-    magnitudeB+=vecB(i)*vecB(i)
+    magnitudeB+=vecB[i]*vecB[i]
 }
 magnitudeB=Math.sqrt(magnitudeB)
 
 return dotProduct / (magnitudeA * magnitudeB);
 
 //identical direction(scale up)
+
 const vectr1=[1,2]
 const vectr2=[2,3]
+console.log(cosineSimilarity(vecA, vectB));
+
+//  A . B / ||A|| * ||B||
+
+function cosineSimilarity(vecA, vecB) {
+  // 0. Check if the vectors have the same length
+  if (vecA.length !== vecB.length) {
+    throw new Error("Vectors must have the same length");
+  }
+}
