@@ -65,6 +65,11 @@ for (let i = 0; i < vecA.length; i++) {
     magnitudeA += vecA[i] * vecA[i];
     magnitudeB += vecB[i] * vecB[i];
   }
+ magnitudeA = Math.sqrt(magnitudeA);
+  magnitudeB = Math.sqrt(magnitudeB);
 
+  if (magnitudeA === 0 || magnitudeB === 0) {
+    return 0;
+  }
 
 }
