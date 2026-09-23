@@ -72,4 +72,7 @@ for (let i = 0; i < vecA.length; i++) {
     return 0;
   }
 
+  
+  return dotProduct / (magnitudeA * magnitudeB);
+
 }
