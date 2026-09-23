@@ -54,4 +54,11 @@ function cosineSimilarity(vecA, vecB) {
   if (vecA.length !== vecB.length) {
     throw new Error("Vectors must have the same length");
   }
+ // 1. Dot Product
+  let dotProduct = 0;
+
+  // 2. Magnitude (
+  let magnitudeA = 0;
+  let magnitudeB = 0;
+
 }
