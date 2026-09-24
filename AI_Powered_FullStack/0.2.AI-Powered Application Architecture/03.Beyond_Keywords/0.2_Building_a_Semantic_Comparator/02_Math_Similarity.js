@@ -89,4 +89,12 @@ async function compareText() {
     contents: textA,
   });
 
+
+  const resultsB = await ai.models.embedContent({
+    model: GEMINI_EMBEDDING_MODEL,
+    contents: textB,
+  });
+
+  
+
 }
