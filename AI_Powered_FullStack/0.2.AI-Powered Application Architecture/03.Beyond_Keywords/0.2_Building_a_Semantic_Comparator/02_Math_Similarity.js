@@ -95,6 +95,9 @@ async function compareText() {
     contents: textB,
   });
 
-  
+    const resultsC = await ai.models.embedContent({
+    model: GEMINI_EMBEDDING_MODEL,
+    contents: textC,
+  });
 
 }
