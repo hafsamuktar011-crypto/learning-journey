@@ -75,4 +75,18 @@ for (let i = 0; i < vecA.length; i++) {
   
   return dotProduct / (magnitudeA * magnitudeB);
 
+
+
+}
+
+async function compareText() {
+  const textA = "What is the weather like today?";
+  const textB = "What is your favorite color?";
+  const textC = "The weather is sunny and warm today.";
+
+  const resultsA = await ai.models.embedContent({
+    model: GEMINI_EMBEDDING_MODEL,
+    contents: textA,
+  });
+
 }
