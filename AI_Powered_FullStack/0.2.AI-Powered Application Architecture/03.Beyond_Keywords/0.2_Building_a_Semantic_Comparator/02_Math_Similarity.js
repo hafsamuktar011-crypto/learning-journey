@@ -100,4 +100,21 @@ async function compareText() {
     contents: textC,
   });
 
+
+
+  const V1 = resultsA.embeddings[0].values;
+  const V2 = resultsB.embeddings[0].values;
+  const V3 = resultsC.embeddings[0].values;
+
+  const V1andV2 = cosineSimilarity(V1, V2);
+  const V1andV3 = cosineSimilarity(V1, V3);
+
+  console.log("Text A:", textA);
+  console.log("Text B:", textB);
+  console.log("Text C:", textC);
+
+  console.log("\nSimilarity between A and B:", V1andV2);
+  console.log("Similarity between A and C:", V1andV3);
 }
+
+compareText();
