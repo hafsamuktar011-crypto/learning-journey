@@ -16,6 +16,11 @@ function cosineSimilarity (vecA, vecB) {
         throw new Error ('Vectors must have the same length');
     }
 
+// 1. Dot Product (multipy matching components and sum)
+    let dotProduct = 0;
 
+    // 2. Magnitude (Length of each vectors)
+    let magnitudeA = 0
+    let magnitudeB = 0
 
 }
