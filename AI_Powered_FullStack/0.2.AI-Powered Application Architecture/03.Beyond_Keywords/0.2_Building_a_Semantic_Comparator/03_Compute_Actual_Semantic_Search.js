@@ -9,3 +9,13 @@ if (!GEMINI_API_KEY) {
 
 // 1. Initialize the SDK
 const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+
+function cosineSimilarity (vecA, vecB) {
+    // 0. Check if the vectors have the same length
+    if (vecA.length !== vecB.length) {
+        throw new Error ('Vectors must have the same length');
+    }
+
+
+
+}
