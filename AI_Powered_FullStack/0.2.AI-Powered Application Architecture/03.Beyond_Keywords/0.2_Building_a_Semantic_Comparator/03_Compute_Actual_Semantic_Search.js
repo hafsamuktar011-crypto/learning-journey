@@ -6,3 +6,6 @@ const GEMINI_EMBEDDING_MODEL = process.env.GEMINI_EMBEDDING_MODEL || 'gemini-emb
 if (!GEMINI_API_KEY) {
     throw new Error('GEMINI_API_KEY environment variable is required');
 }
+
+// 1. Initialize the SDK
+const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
