@@ -28,6 +28,15 @@ function cosineSimilarity (vecA, vecB) {
         magnitudeA += vecA[i] * vecA[i]
         magnitudeB += vecB[i] * vecB[i]
     }
-    
+
+      magnitudeA = Math.sqrt(magnitudeA)
+    magnitudeB = Math.sqrt(magnitudeB)
+
+    if (magnitudeA === 0 || magnitudeB === 0) {
+        return 0;
+    }
+
+    return dotProduct / (magnitudeA * magnitudeB)
+
 
 }
