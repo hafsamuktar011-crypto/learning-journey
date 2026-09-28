@@ -39,4 +39,20 @@ function cosineSimilarity (vecA, vecB) {
     return dotProduct / (magnitudeA * magnitudeB)
 
 
+
+}
+
+async function compareText() {
+  const textA = "what is the weather like today?";
+  const textB = "what is your favorite color?";
+  const textC = "weather is sunny and warm today";
+
+  const resultsA = await ai.models.embedContent({
+    model: GEMINI_EMBEDDING_MODEL,
+    contents: textA,
+    config: {
+      taskType: "RETRIEVAL_DOCUMENT",
+    },
+  })
+
 }
