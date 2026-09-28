@@ -55,4 +55,11 @@ async function compareText() {
     },
   })
 
+  const resultsC = await ai.models.embedContent({
+    model: GEMINI_EMBEDDING_MODEL,
+    contents: textC,
+    config: {
+      taskType: "RETRIEVAL_DOCUMENT",
+    },
+  });
 }
