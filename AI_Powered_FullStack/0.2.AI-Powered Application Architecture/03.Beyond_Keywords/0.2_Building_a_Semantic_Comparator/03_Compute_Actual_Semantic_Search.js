@@ -62,4 +62,8 @@ async function compareText() {
       taskType: "RETRIEVAL_DOCUMENT",
     },
   });
+
+    const V1 = resultsA.embeddings[0].values;
+  const V2 = resultsB.embeddings[0].values;
+  const V3 = resultsC.embeddings[0].values;
 }
