@@ -66,4 +66,9 @@ async function compareText() {
     const V1 = resultsA.embeddings[0].values;
   const V2 = resultsB.embeddings[0].values;
   const V3 = resultsC.embeddings[0].values;
+
+   const V1andV2 = cosineSimilarity(V1, V2);
+  console.log("V1 and V2 similarity:", V1andV2);
+  const V1andV3 = cosineSimilarity(V1, V3);
+  console.log("V1 and V3 similarity:", V1andV3);
 }
