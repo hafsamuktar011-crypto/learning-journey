@@ -73,3 +73,5 @@ async function compareText() {
   console.log("V1 and V3 similarity:", V1andV3);
 }
 compareText()
+
+z-badRo7-rintum
