@@ -74,4 +74,3 @@ async function compareText() {
 }
 compareText()
 
-z-badRo7-rintum
